@@ -209,6 +209,8 @@ class sendinvitation extends \core\task\adhoc_task {
      * @return object
      */
     public static function get_sender($courseid) {
+        // Allwas use support adress as sender
+        return [];
         global $DB;
         $rolesql = "SELECT rc.id, rc.roleid FROM {role_capabilities} rc
         JOIN {capabilities} cap ON rc.capability = cap.name
